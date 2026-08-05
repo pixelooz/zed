@@ -33,7 +33,7 @@
     },
   },
   {
-    "context": "ProjectSearchBar || VimControl && !menu",
+    "context": "Pane || VimControl && !menu",
     "bindings": {
       "ctrl *": "search::ToggleRegex",
       "ctrl shift-a": "search::ToggleCaseSensitive",
