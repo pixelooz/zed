@@ -159,11 +159,15 @@
   "helix_mode": false,
   "vim_mode": true,
   "base_keymap": "VSCode",
+  // ===================== Font =============================================================================
   "buffer_font_weight": 500.0,
   "ui_font_weight": 500.0,
   "buffer_font_family": "CaskaydiaCove Nerd Font",
   "ui_font_size": 15.0,
   "buffer_font_size": 14.0,
+  "buffer_font_features": {
+    "calt": false
+  },
   "theme": {
     "mode": "system",
     "light": "One Light",
@@ -181,6 +185,7 @@
   // ===== Token based highlighting of syntax ================================================================
   "global_lsp_settings": {
     "semantic_token_rules": [
+      // Applies to rust
       {
         "token_type": "operator",
         "token_modifiers": ["controlFlow"],
@@ -227,8 +232,8 @@
       },
       {
         "token_type": "macro",
-        // "foreground_color": "#A1A6FFff",
-        "foreground_color": "#FF5A58FF",
+        "foreground_color": "#A1A6FFff",
+        // "foreground_color": "#FF5A58FF",
       },
       {
         "token_type": "selfTypeKeyword",
@@ -238,9 +243,20 @@
         "token_type": "property",
         "foreground_color": "#E8E3DCFF",
       },
+      // Applies to Go
+      {
+        "token_type": "type",
+        "token_modifiers": ["definition", "interface"],
+        "style": ["enum"]
+      }
     ],
   },
-
+  // ===== Language Configurations ==========================================================
+  "languages": {
+    "Markdown": {
+      "language_servers": ["marksman"]
+    }
+  },
   // ===== Lsp Configuration ================================================================
   "lsp": {
     "rust-analyzer": {
@@ -250,5 +266,15 @@
         }
       }
     }
-  }
+  },
+  "dap": {
+    "CodeLLDB": {
+      "binary": "~/.codelldb-custom/extension/adapter/codelldb"
+    },
+  },
+  // "dap": {
+  //   "CodeLLDB": {
+  //     "binary": "/opt/homebrew/opt/llvm/bin/lldb-dap"
+  //   },
+  // },
 }

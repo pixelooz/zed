@@ -17,6 +17,7 @@
     "context": "Workspace",
     "bindings": {
       "ctrl-/": "workspace::ToggleBottomDock",
+      "ctrl-\\": "tab_switcher::Toggle",
     },
   },
   {
@@ -116,7 +117,10 @@
       "space w j": "workspace::ActivatePaneDown",
       "space w h": "workspace::ActivatePaneLeft",
       "space w a": "pane::CloseAllItems",
+      "space w o": "pane::CloseOtherItems",
       "space w c": "pane::CloseActiveItem",
+      "space w ]": "pane::CloseItemsToTheRight",
+      "space w [": "pane::CloseItemsToTheLeft",
     },
   },
   // Inside Terminal
@@ -198,7 +202,9 @@
 
       // git shortcuts
       "space g b": "git::Blame", // git blame inline
-      "space g a": "git::Add",
+      "space g a": "git::Diff",
+      "space g f": "git::OpenFileDiff",
+      "space g h": "git::FileHistory",
       "space g s": "git::StageAll",
       "space g shift-s": "git::ViewStagedChanges",
       "space g u": "git::UnstageAll",
