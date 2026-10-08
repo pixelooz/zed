@@ -7,6 +7,10 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "cursor_animation": {
+    "enabled": false
+  },
+  "reveal_if_open": true,
   "lsp_results_location": "picker",
   "proxy": "",
   "title_bar": {
@@ -259,13 +263,40 @@
   },
   // ===== Lsp Configuration ================================================================
   "lsp": {
+    // === Rust Lsp =========================================================================
     "rust-analyzer": {
       "initialization_options": {
         "inlayHints": {
-          "maxLength": 10
+          "maxLength": 15
         }
       }
-    }
+    },
+    // === Java Lsp =========================================================================
+    "jdtls": {
+      "settings": {
+        "java_home": "/Library/Java/JavaVirtualMachines/amazon-corretto-21.jdk/Contents/Home",
+        "lombok_support": true,
+        "jdk_auto_download": false,
+        "max_memory": "2G"
+      },
+      "initialization_options": {
+        "settings": {
+          "java": {
+            "configuration": {
+              "updateBuildConfiguration": "automatic",
+              "runtimes": [
+                {
+                  "name": "JavaSE-21",
+                  "path": "/Library/Java/JavaVirtualMachines/amazon-corretto-21.jdk/Contents/Home",
+                  "default": true
+                }
+              ],
+            },
+            "saveActions": { "organizeImports": true }
+          }
+        }
+      }
+    },
   },
   "dap": {
     "CodeLLDB": {

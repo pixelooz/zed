@@ -153,6 +153,7 @@
   {
     "context": "vim_mode == normal && !menu",
     "bindings": {
+      "space": null,
       "space space": "file_finder::Toggle",
       "space e": "project_panel::Toggle",
       "space E": "workspace::ToggleRightDock",
@@ -196,6 +197,10 @@
       "space c a": "editor::ToggleCodeActions",
       "space c r": "editor::Rename",
       "space c f": "editor::Format",
+
+      // call heirarchy settings
+      "space c i": "call_hierarchy::ShowIncomingCalls",
+      "space c o": "call_hierarchy::ShowOutgoingCalls",
 
       "space x x": "diagnostics::Deploy", // open diagnostics list
       "space c s": "task::Spawn",
@@ -265,4 +270,16 @@
       ],
     },
   },
+  {
+    "context": "CallHierarchyPicker > Picker > Editor",
+    "bindings": {
+      "ctrl-h": "call_hierarchy::ToggleDirection"
+    }
+  },
+  {
+    "context": "CallHierarchyPicker > Picker > Editor",
+    "unbind": {
+      "alt-shift-h": "call_hierarchy::ToggleDirection"
+    }
+  }
 ]
