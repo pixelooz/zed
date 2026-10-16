@@ -56,8 +56,8 @@
                 "scrollbar.track.background": "#00000000",
                 "scrollbar.track.border": "#1a1c1fff",
                 "editor.foreground": "#E2E2E3ff",
-                "editor.background": "#202224ff",
-                "editor.gutter.background": "#202224ff",
+                "editor.background": "#1E1F21ff",
+                "editor.gutter.background": "#1E1F21ff",
                 "editor.subheader.background": "#292B30ff",
                 "editor.active_line.background": "#26282Eff",
                 "editor.highlighted_line.background": "#292B30ff",
@@ -204,7 +204,7 @@
                         "font_weight": null
                     },
                     "comment": {
-                        "color": "#76808Aff",
+                        "color": "#447D4Eff",
                         "font_style": null,
                         "font_weight": null
                     },
@@ -431,7 +431,7 @@
                         "font_weight": null
                     },
                     "variable": {
-                        "color": "#E2E2E3ff",
+                        "color": "#D4D4D4ff",
                         "font_style": null,
                         "font_weight": null
                     },
