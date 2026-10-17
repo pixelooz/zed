@@ -449,6 +449,51 @@
                         "color": "#FF974Dff",
                         "font_style": null,
                         "font_weight": null
+                    },
+                    "title.markup": {
+                        "color": "#FF5A58ff",
+                        "font_style": null,
+                        "font_weight": 700
+                    },
+                    "punctuation.list_marker.markup": {
+                        "color": "#9ED072ff",
+                        "font_style": null,
+                        "font_weight": null
+                    },
+                    "punctuation.embedded.markup": {
+                        "color": "#FF974Dff",
+                        "font_style": null,
+                        "font_weight": null
+                    },
+                    "emphasis.markup": {
+                        "color": "#B39DF3ff",
+                        "font_style": "italic",
+                        "font_weight": null
+                    },
+                    "emphasis.strong.markup": {
+                        "color": "#F0A737ff",
+                        "font_style": null,
+                        "font_weight": 700
+                    },
+                    "text.literal.markup": {
+                        "color": "#89b068ff",
+                        "font_style": null,
+                        "font_weight": null
+                    },
+                    "strikethrough.markup": {
+                        "color": "#7F8490ff",
+                        "font_style": null,
+                        "font_weight": null
+                    },
+                    "link_text.markup": {
+                        "color": "#10ACCFff",
+                        "font_style": "italic",
+                        "font_weight": null
+                    },
+                    "link_uri.markup": {
+                        "color": "#4C88F4ff",
+                        "font_style": null,
+                        "font_weight": null
                     }
                 },
                 "scrollbar.thumb.active_background": "#373A40ff",
