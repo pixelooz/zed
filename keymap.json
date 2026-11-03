@@ -281,5 +281,11 @@
     "unbind": {
       "alt-shift-h": "call_hierarchy::ToggleDirection"
     }
+  },
+  {
+    "context": "Workspace",
+    "unbind": {
+      "ctrl-r": "projects::OpenRecent"
+    }
   }
 ]
