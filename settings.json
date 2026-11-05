@@ -273,6 +273,9 @@
       "initialization_options": {
         "inlayHints": {
           "maxLength": 15
+        },
+        "check": {
+          "command": "clippy"
         }
       }
     },
@@ -303,11 +306,11 @@
       }
     },
   },
-  "dap": {
-    "CodeLLDB": {
-      "binary": "~/.codelldb-custom/extension/adapter/codelldb"
-    },
-  },
+  // "dap": {
+  //   "CodeLLDB": {
+  //     "binary": "~/.codelldb-custom/extension/adapter/codelldb"
+  //   },
+  // },
   // "dap": {
   //   "CodeLLDB": {
   //     "binary": "/opt/homebrew/opt/llvm/bin/lldb-dap"
