@@ -208,6 +208,7 @@
       // git shortcuts
       "space g b": "git::Blame", // git blame inline
       "space g a": "git::Diff",
+      "space g d": "editor::ToggleSelectedDiffHunks",
       "space g f": "git::OpenFileDiff",
       "space g h": "git::FileHistory",
       "space g s": "git::StageAll",
