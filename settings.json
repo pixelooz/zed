@@ -213,7 +213,7 @@
       {
         "token_type": "variable",
         "token_modifiers": ["callable"],
-        "foreground_color": "#6D9EDEff"
+        "foreground_color": "#6BBCF9ff"
       },
       {
         "token_type": "parameter",
@@ -266,6 +266,11 @@
       "language_servers": ["marksman"]
     }
   },
+  // ===== Language Servers Allowed List ====================================================
+  "language_servers": [
+    "!codebook",
+    "..."
+  ],
   // ===== Lsp Configuration ================================================================
   "lsp": {
     // === Rust Lsp =========================================================================
