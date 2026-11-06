@@ -84,6 +84,7 @@
       "p": "project_panel::Paste",
       "q": "workspace::ToggleRightDock",
       "space e": "project_panel::Toggle",
+      "space g e": "git_panel::Toggle",
       ":": "command_palette::Toggle",
       "/": "project_panel::NewSearchInDirectory",
       "enter": "project_panel::OpenPermanent",
@@ -97,6 +98,12 @@
       "shift-r": "project_panel::Rename",
       "-": "project_panel::SelectParent",
     },
+  },
+  {
+    "context": "GitPanel",
+    "bindings": {
+      "space g e": "git_panel::Toggle",
+    }
   },
   {
     "context": "EmptyPane || SharedScreen",
@@ -156,7 +163,7 @@
       "space": null,
       "space space": "file_finder::Toggle",
       "space e": "project_panel::Toggle",
-      "space E": "workspace::ToggleRightDock",
+      "space g e": "git_panel::Toggle",
       "space f n": "workspace::NewFile",
       "space f p": "projects::OpenRecent",
       "space s g": "workspace::NewSearch",
@@ -216,6 +223,7 @@
       "space g u": "git::UnstageAll",
       "space g shift-u": "git::ViewUnstagedChanges",
       "space g c": "git::Commit",
+      "space g r": "git::Restore",
     },
   },
   {

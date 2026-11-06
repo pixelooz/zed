@@ -212,6 +212,11 @@
       },
       {
         "token_type": "variable",
+        "token_modifiers": ["declaration", "callable"],
+        "style": ["variable"]
+      },
+      {
+        "token_type": "variable",
         "token_modifiers": ["callable"],
         "foreground_color": "#6BBCF9ff"
       },
