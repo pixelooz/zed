@@ -100,10 +100,23 @@
     },
   },
   {
-    "context": "GitPanel",
+    "context": "GitPanel && (ChangesList || HistoryList) && !GitBranchSelector && !GitRepositoryCollector",
     "bindings": {
       "space g e": "git_panel::Toggle",
-      "space g p": "git::Push",
+    }
+  },
+  {
+    "context": "GitPanel && ChangesList && !GitBranchSelector && !GitRepositoryCollector",
+    "bindings": {
+      "g p": "git::Push",
+      "g c": "git_panel::FocusEditor"
+    }
+  },
+  {
+    "context": "GitPanel && CommitEditor > Editor && VimControl && !menu",
+    "bindings": {
+      "g p": "git::Push",
+      "g c": "git_panel::FocusChanges"
     }
   },
   {
@@ -147,12 +160,17 @@
       "j k": "vim::NormalBefore"
     },
   },
+  {
+    "context": "Editor && vim_mode == normal && !menu",
+    "bindings": {
+      "space k": "editor::Hover",
+    }
+  },
   // Normal + Visual (VimControl covers both)
   {
     "context": "VimControl && !menu",
     "bindings": {
       "space f f": "file_finder::Toggle",
-      "space k": "editor::Hover",
       "space /": "text_finder::Toggle",
       // "space /": "pane::DeploySearch",
     },
@@ -168,12 +186,7 @@
       "space f n": "workspace::NewFile",
       "space f p": "projects::OpenRecent",
       "space s g": "workspace::NewSearch",
-    },
-  },
   // ── Tab navigation (shift-H / shift-L) ──────────────────────────────────
-  {
-    "context": "vim_mode == normal && !menu",
-    "bindings": {
       "shift-h": "pane::ActivatePreviousItem",
       "shift-l": "pane::ActivateNextItem",
       "space b h": "pane::SwapItemLeft",

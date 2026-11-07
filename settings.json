@@ -218,12 +218,13 @@
       {
         "token_type": "variable",
         "token_modifiers": ["callable"],
-        "foreground_color": "#6BBCF9ff"
+        // "foreground_color": "#6BBCF9ff",
+        "foreground_color": "#46BCE0ff"
       },
       {
         "token_type": "parameter",
         "token_modifiers": ["callable"],
-        "foreground_color": "#6D9EDEff"
+        "foreground_color": "#46BCE0ff"
       },
       {
         "token_type": "decorator",
@@ -246,9 +247,9 @@
       },
       {
         "token_type": "macro",
-        "foreground_color": "#A1A6FFff",
+        // "foreground_color": "#A1A6FFff",
         // "foreground_color": "#FF5A58FF",
-        // "foreground_color": "#6BBCF9ff"
+        "foreground_color": "#46BCE0ff"
       },
       {
         "token_type": "selfTypeKeyword",
