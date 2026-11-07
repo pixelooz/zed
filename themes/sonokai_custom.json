@@ -1,7 +1,7 @@
 {
     "$schema": "https://zed.dev/schema/themes/v0.2.0.json",
     "name": "Sonokai Custom",
-    "author": "Parth Srivastava",
+    "author": "Parth Srivastav",
     "themes": [
         {
             "name": "Sonokai Custom",
@@ -27,7 +27,7 @@
                 "ghost_element.selected": "#383C45ff",
                 "ghost_element.disabled": "#292B30ff",
                 "text": "#E2E2E3ff",
-                "text.muted": "#7F8490ff",
+                "text.muted": "#98A1A6ff",
                 "text.placeholder": "#595F6Fff",
                 "text.disabled": "#595F6Fff",
                 "text.accent": "#9ED072ff",
