@@ -103,6 +103,7 @@
     "context": "GitPanel",
     "bindings": {
       "space g e": "git_panel::Toggle",
+      "space g p": "git::Push",
     }
   },
   {

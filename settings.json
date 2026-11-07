@@ -213,7 +213,7 @@
       {
         "token_type": "variable",
         "token_modifiers": ["declaration", "callable"],
-        "style": ["variable"]
+        "foreground_color": "#D6D4D0ff"
       },
       {
         "token_type": "variable",
@@ -246,8 +246,9 @@
       },
       {
         "token_type": "macro",
-        "foreground_color": "#A1A6FFff",
-        // "foreground_color": "#FF5A58FF",
+        // "foreground_color": "#A1A6FFff",
+        "foreground_color": "#FF5A58FF",
+        // "foreground_color": "#6BBCF9ff"
       },
       {
         "token_type": "selfTypeKeyword",
@@ -255,7 +256,7 @@
       },
       {
         "token_type": "property",
-        "foreground_color": "#D6D4D0ff",
+        "foreground_color": "#BBBDBFff",
       },
       // Applies to Go
       {
