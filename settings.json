@@ -249,7 +249,7 @@
         "token_type": "macro",
         // "foreground_color": "#A1A6FFff",
         // "foreground_color": "#FF5A58FF",
-        "foreground_color": "#46BCE0ff"
+        "foreground_color": "#209dd6"
       },
       {
         "token_type": "selfTypeKeyword",
