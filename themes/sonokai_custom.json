@@ -220,7 +220,7 @@
                         "font_weight": 500
                     },
                     "constructor": {
-                        "color": "#788CDAff",
+                        "color": "#7798D1ff",
                         "font_style": null,
                         "font_weight": null
                     },
@@ -240,7 +240,7 @@
                         "font_weight": 700
                     },
                     "enum": {
-                        "color": "#788CDAff",
+                        "color": "#7798D1ff",
                         "font_style": null,
                         "font_weight": null
                     },
@@ -421,12 +421,12 @@
                         "font_weight": null
                     },
                     "type.builtin": {
-                        "color": "#788CDAff",
+                        "color": "#8090D1ff",
                         "font_style": null,
                         "font_weight": null
                     },
                     "type.interface": {
-                        "color": "#788CDAff",
+                        "color": "#7798D1ff",
                         "font_style": null,
                         "font_weight": null
                     },

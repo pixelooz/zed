@@ -109,14 +109,16 @@
     "context": "GitPanel && ChangesList && !GitBranchSelector && !GitRepositoryCollector",
     "bindings": {
       "g p": "git::Push",
-      "g c": "git_panel::FocusEditor"
+      "g c": "git::Commit",
+      "g j": "git_panel::FocusEditor"
     }
   },
   {
     "context": "GitPanel && CommitEditor > Editor && VimControl && !menu",
     "bindings": {
       "g p": "git::Push",
-      "g c": "git_panel::FocusChanges"
+      "g c": "git::Commit",
+      "g k": "git_panel::FocusChanges"
     }
   },
   {

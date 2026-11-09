@@ -202,7 +202,7 @@
       },
       {
         "token_type": "struct",
-        "token_modifiers": ["library", "defaultLibrary"],
+        "token_modifiers": ["library"],
         "foreground_color": "#FF5A58FF",
       },
       {
