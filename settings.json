@@ -7,12 +7,14 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  "window_title_format": "${projectName}${separator}${fileName}",
+  "format_on_save": "modifications_if_available",
   "markdown_preview": {
     "limit_content_width": true,
-    "max_width": 1000.0
+    "max_width": 1000.0,
   },
   "cursor_animation": {
-    "enabled": false
+    "enabled": false,
   },
   "reveal_if_open": true,
   "lsp_results_location": "picker",
@@ -57,16 +59,21 @@
     "default_width": 320.0,
   },
   "agent": {
+    "threads_sidebar": {
+      "position": "left",
+      "auto_open": false,
+      "default_width": 320.0,
+    },
     "flexible": false,
-    "dock": "left",
+    "dock": "right",
     "default_profile": "ask",
     "default_model": {
       "effort": "high",
-      "provider": "deepseek",
-      "model": "deepseek-v4-flash",
+      "provider": "google",
+      "model": "gemini-4-hydrogen",
       "enable_thinking": true,
     },
-    "default_width": 320.0,
+    "default_width": 450.0,
   },
   "outline_panel": {
     "button": false,
@@ -125,6 +132,7 @@
     "enabled": true,
   },
   "vim": {
+    "use_system_clipboard": "on_yank",
     "use_regex_search": false,
     "show_edit_predictions_in_normal_mode": false,
     "highlight_on_yank_duration": 270,
@@ -133,7 +141,6 @@
     },
     "gdefault": true,
     "use_smartcase_find": true,
-    "use_system_clipboard": "on_yank",
     "toggle_relative_line_numbers": true,
   },
   "autosave": {
@@ -141,7 +148,7 @@
       "milliseconds": 10000,
     },
   },
-  "disable_ai": true,
+  "disable_ai": false,
   "cli_default_open_behavior": "new_window",
   "buffer_line_height": {
     "custom": 1.15,
@@ -172,10 +179,11 @@
   "buffer_font_weight": 500.0,
   "ui_font_weight": 500.0,
   "buffer_font_family": "CaskaydiaMono Nerd Font",
+  // "buffer_font_family": "mononoki",
   "ui_font_size": 15.0,
   "buffer_font_size": 14.0,
   "buffer_font_features": {
-    "calt": false
+    "calt": false,
   },
   "theme": {
     "mode": "system",
@@ -213,18 +221,18 @@
       {
         "token_type": "variable",
         "token_modifiers": ["declaration", "callable"],
-        "foreground_color": "#D6D4D0ff"
+        "foreground_color": "#D6D4D0ff",
       },
       {
         "token_type": "variable",
         "token_modifiers": ["callable"],
         // "foreground_color": "#6BBCF9ff",
-        "foreground_color": "#3CB0E6ff"
+        "foreground_color": "#3CB0E6ff",
       },
       {
         "token_type": "parameter",
         "token_modifiers": ["callable"],
-        "foreground_color": "#3CB0E6ff"
+        "foreground_color": "#3CB0E6ff",
       },
       {
         "token_type": "decorator",
@@ -242,6 +250,11 @@
         "style": ["type.builtin"],
       },
       {
+        "token_type": "character",
+        "token_modifiers": ["macro"],
+        "style": ["string"],
+      },
+      {
         "token_type": "typeParameter",
         "foreground_color": "#688EE3FF",
       },
@@ -249,7 +262,7 @@
         "token_type": "macro",
         // "foreground_color": "#A1A6FFff",
         // "foreground_color": "#FF5A58FF",
-        "foreground_color": "#3CB0E6ff"
+        "foreground_color": "#3CB0E6ff",
       },
       {
         "token_type": "selfTypeKeyword",
@@ -263,33 +276,30 @@
       {
         "token_type": "type",
         "token_modifiers": ["definition", "interface"],
-        "style": ["enum"]
-      }
+        "style": ["enum"],
+      },
     ],
   },
   // ===== Language Configurations ==========================================================
   "languages": {
     "Markdown": {
-      "language_servers": ["marksman"]
-    }
+      "language_servers": ["marksman"],
+    },
   },
   // ===== Language Servers Allowed List ====================================================
-  "language_servers": [
-    "!codebook",
-    "..."
-  ],
+  "language_servers": ["!codebook", "..."],
   // ===== Lsp Configuration ================================================================
   "lsp": {
     // === Rust Lsp =========================================================================
     "rust-analyzer": {
       "initialization_options": {
         "inlayHints": {
-          "maxLength": 15
+          "maxLength": 15,
         },
         "check": {
-          "command": "clippy"
-        }
-      }
+          "command": "clippy",
+        },
+      },
     },
     // === Java Lsp =========================================================================
     "jdtls": {
@@ -297,7 +307,7 @@
         "java_home": "/Library/Java/JavaVirtualMachines/amazon-corretto-21.jdk/Contents/Home",
         "lombok_support": true,
         "jdk_auto_download": false,
-        "max_memory": "2G"
+        "max_memory": "2G",
       },
       "initialization_options": {
         "settings": {
@@ -308,14 +318,14 @@
                 {
                   "name": "JavaSE-21",
                   "path": "/Library/Java/JavaVirtualMachines/amazon-corretto-21.jdk/Contents/Home",
-                  "default": true
-                }
+                  "default": true,
+                },
               ],
             },
-            "saveActions": { "organizeImports": true }
-          }
-        }
-      }
+            "saveActions": { "organizeImports": true },
+          },
+        },
+      },
     },
   },
   // "dap": {

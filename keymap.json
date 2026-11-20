@@ -72,7 +72,8 @@
       "g \"": "vim::ToggleRegistersView",
     },
   },
-  // File panel (netrw)
+
+  // -- File panel (netrw) ---------------------------------------------------
   {
     "context": "ProjectPanel && not_editing",
     "bindings": {
@@ -84,6 +85,7 @@
       "p": "project_panel::Paste",
       "q": "workspace::ToggleRightDock",
       "space e": "project_panel::Toggle",
+      "space a e": "agent::Toggle",
       "space g e": "git_panel::Toggle",
       ":": "command_palette::Toggle",
       "/": "project_panel::NewSearchInDirectory",
@@ -99,34 +101,69 @@
       "-": "project_panel::SelectParent",
     },
   },
+
+  // -- Git Panel ------------------------------------------------------------
   {
     "context": "GitPanel && (ChangesList || HistoryList) && !GitBranchSelector && !GitRepositoryCollector",
     "bindings": {
       "space g e": "git_panel::Toggle",
-    }
+    },
   },
   {
     "context": "GitPanel && ChangesList && !GitBranchSelector && !GitRepositoryCollector",
     "bindings": {
       "g p": "git::Push",
       "g c": "git::Commit",
-      "g j": "git_panel::FocusEditor"
-    }
+      "g j": "git_panel::FocusEditor",
+    },
   },
   {
     "context": "GitPanel && CommitEditor > Editor && VimControl && !menu",
     "bindings": {
       "g p": "git::Push",
       "g c": "git::Commit",
-      "g k": "git_panel::FocusChanges"
-    }
+      "g k": "git_panel::FocusChanges",
+    },
   },
+
+  // -- Agents ---------------------------------------------------------------
+  {
+    "context": "(AcpThread || AcpThread > Editor) && VimControl && !menu",
+    "bindings": {
+      "ctrl-n": "agent::ScrollOutputLineDown",
+      "ctrl-p": "agent::ScrollOutputLineUp",
+    },
+  },
+  {
+    "context": "ThreadsSidebar && !Editor",
+    "bindings": {
+      "space t e": "multi_workspace::ToggleWorkspaceSidebar",
+    },
+  },
+
+  // -- Markdown -------------------------------------------------------------
+  {
+    "context": "MarkdownPreview",
+    "bindings": {
+      "ctrl-n": "markdown::ScrollDown",
+      "ctrl-p": "markdown::ScrollUp",
+      "j": "markdown::ScrollDown",
+      "k": "markdown::ScrollUp",
+      "{": "markdown::ScrollPageUp",
+      "}": "markdown::ScrollPageDown",
+      "shift-h": "pane::ActivatePreviousItem",
+      "shift-l": "pane::ActivateNextItem",
+    },
+  },
+
   {
     "context": "EmptyPane || SharedScreen",
     "bindings": {
       "space space": "file_finder::Toggle",
       "space /": "text_finder::Toggle",
+      "space t e": "multi_workspace::ToggleWorkspaceSidebar",
       "space e": "project_panel::Toggle",
+      "space a e": "agent::Toggle",
       "space f n": "workspace::NewFile",
       "space f p": "projects::OpenRecent",
       "space s g": "workspace::NewSearch",
@@ -151,7 +188,7 @@
     "context": "Terminal",
     "bindings": {
       "ctrl-w k": "terminal_panel::ToggleFocus",
-      "ctrl-w space": "terminal::ToggleViMode"
+      "ctrl-w space": "terminal::ToggleViMode",
     },
   },
   // Insert mode
@@ -159,14 +196,14 @@
     "context": "Editor && vim_mode == insert && !GitCommit",
     "bindings": {
       "k j": "vim::NormalBefore",
-      "j k": "vim::NormalBefore"
+      "j k": "vim::NormalBefore",
     },
   },
   {
     "context": "Editor && vim_mode == normal && !menu",
     "bindings": {
       "space k": "editor::Hover",
-    }
+    },
   },
   // Normal + Visual (VimControl covers both)
   {
@@ -177,35 +214,28 @@
       // "space /": "pane::DeploySearch",
     },
   },
+
   // Normal mode only
   {
     "context": "vim_mode == normal && !menu",
     "bindings": {
       "space": null,
       "space space": "file_finder::Toggle",
+      "space t e": "multi_workspace::ToggleWorkspaceSidebar",
       "space e": "project_panel::Toggle",
+      "space a e": "agent::Toggle",
       "space g e": "git_panel::Toggle",
       "space f n": "workspace::NewFile",
       "space f p": "projects::OpenRecent",
       "space s g": "workspace::NewSearch",
-  // ── Tab navigation (shift-H / shift-L) ──────────────────────────────────
+      // ── Tab navigation (shift-H / shift-L) ──────────────────────────────-
       "shift-h": "pane::ActivatePreviousItem",
       "shift-l": "pane::ActivateNextItem",
       "space b h": "pane::SwapItemLeft",
       "space b l": "pane::SwapItemRight",
     },
   },
-  {
-    "context": "vim_mode == normal && !menu && Pane",
-    "bindings": {
-      "space b 1": ["pane::ActivateItem", 0],
-      "space b 2": ["pane::ActivateItem", 1],
-      "space b 3": ["pane::ActivateItem", 2],
-      "space b 4": ["pane::ActivateItem", 3],
-      "space b 5": ["pane::ActivateItem", 4],
-    },
-  },
-  // ── LSP / code actions (LazyVim g-prefixed) ─────────────────────────────
+  // ── LSP / code actions (LazyVim g-prefixed) ─────────────────────────────-
   // gd, gr, gy, gi already work by default in Zed vim mode.
   // These fill the gaps:
   {
@@ -239,6 +269,7 @@
       "space g u": "git::UnstageAll",
       "space g shift-u": "git::ViewUnstagedChanges",
       "space g c": "git::Commit",
+      "space g p": "git::Push",
       "space g r": "git::Restore",
     },
   },
@@ -249,7 +280,7 @@
       "g u": "git::UnstageAndNext",
     },
   },
-  // ── Neovim Y = yank to end of line ──────────────────────────────────────
+  // ── Neovim Y = yank to end of line ──────────────────────────────────────-
   {
     "context": "vim_mode == normal && !menu",
     "bindings": {
@@ -282,6 +313,13 @@
       "space q": "pane::CloseActiveItem",
     },
   },
+  // -- Don't know -----------------------------------------------------------
+  {
+    "context": "CallHierarchyPicker > Picker > Editor",
+    "bindings": {
+      "ctrl-h": "call_hierarchy::ToggleDirection",
+    },
+  },
   // -- Unbound Keys ---------------------------------------------------------
   {
     "context": "Editor",
@@ -297,20 +335,84 @@
   },
   {
     "context": "CallHierarchyPicker > Picker > Editor",
-    "bindings": {
-      "ctrl-h": "call_hierarchy::ToggleDirection"
-    }
-  },
-  {
-    "context": "CallHierarchyPicker > Picker > Editor",
     "unbind": {
-      "alt-shift-h": "call_hierarchy::ToggleDirection"
-    }
+      "alt-shift-h": "call_hierarchy::ToggleDirection",
+    },
   },
   {
     "context": "Workspace",
     "unbind": {
-      "ctrl-r": "projects::OpenRecent"
-    }
-  }
+      "ctrl-r": "projects::OpenRecent",
+    },
+  },
+  {
+    "context": "VimControl && vim_mode == helix_normal && !menu && !BufferSearchBar",
+    "unbind": {
+      "g k": "vim::Up",
+    },
+  },
+  {
+    "context": "VimControl && !menu",
+    "unbind": {
+      "g k": [
+        "vim::Up",
+        {
+          "display_lines": true,
+        },
+      ],
+    },
+  },
+  {
+    "context": "VimControl && vim_mode == helix_normal && !menu && !BufferSearchBar",
+    "unbind": {
+      "g j": "vim::Down",
+    },
+  },
+  {
+    "context": "VimControl && !menu",
+    "unbind": {
+      "g j": [
+        "vim::Down",
+        {
+          "display_lines": true,
+        },
+      ],
+    },
+  },
+  {
+    "context": "AcpThread",
+    "bindings": {
+      "ctrl-shift-t": "agent::ToggleModelSelector",
+    },
+  },
+  {
+    "context": "AcpThread",
+    "unbind": {
+      "alt-cmd-/": "agent::ToggleModelSelector",
+    },
+  },
+  {
+    "context": "InlineAssistant > Editor",
+    "bindings": {
+      "ctrl-shift-t": "agent::ToggleModelSelector",
+    },
+  },
+  {
+    "context": "InlineAssistant > Editor",
+    "unbind": {
+      "alt-cmd-/": "agent::ToggleModelSelector",
+    },
+  },
+  {
+    "context": "AgentPanel",
+    "bindings": {
+      "alt-cmd-n": "agent::ToggleNewThreadMenu",
+    },
+  },
+  {
+    "context": "AgentPanel",
+    "unbind": {
+      "alt-cmd-shift-n": "agent::ToggleNewThreadMenu",
+    },
+  },
 ]
